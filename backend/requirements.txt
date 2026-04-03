@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+PyMuPDF
+python-docx
+pytesseract
+groq
+pydantic
+pydantic-settings
+python-dotenv
+celery
+redis
+Pillow
