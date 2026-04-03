@@ -66,7 +66,16 @@ This project is **Cloud-Ready** with professional-grade infrastructure:
 ---
 
 ## 🔒 Security
-The API is protected by a mandatory `x-api-key` header. Unauthorized requests are strictly blocked with `403 Forbidden` status codes to ensure data privacy and prevent API abuse.
+The API is protected by a mandatory `x-api-key` header. Unauthorized requests are strictly blocked with `404 Forbidden` status codes to ensure data privacy and prevent API abuse.
+
+---
+
+## 🦾 AI Tools Used
+In compliance with the hackathon policy, the following AI tools were utilized in the development and operation of this project:
+
+- **Antigravity (AI Coding Assistant):** Primary tool for high-speed code generation, architectural design, and automated deployment configuration.
+- **Groq Cloud (LLM Hosting):** Performance-optimized inference engine used to serve Llama 3.3 70B models for real-time document intelligence.
+- **Llama 3.3 70B (via Groq):** The core Large Language Model used for specialized Named Entity Recognition (NER), Sentiment Analysis, and Summarization.
 
 ---
 
