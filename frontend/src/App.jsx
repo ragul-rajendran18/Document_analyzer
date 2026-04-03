@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
+  const [showApp, setShowApp] = useState(false)
 
   const onDrop = useCallback((acceptedFiles) => {
     if (acceptedFiles.length > 0) {
@@ -52,18 +53,52 @@ function App() {
     }
   }
 
+  if (!showApp) {
+    return (
+      <div className="min-h-screen bg-gray-50/50 dark:bg-neutral-950 flex flex-col items-center justify-center p-6 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 to-gray-50 dark:from-neutral-900 dark:to-neutral-950">
+        <div className="max-w-3xl text-center space-y-8 animate-in fade-in zoom-in-95 duration-700">
+          <div className="inline-flex items-center justify-center p-4 bg-white dark:bg-neutral-900 rounded-2xl shadow-sm border border-gray-100 dark:border-neutral-800 mb-2">
+            <FileText className="w-12 h-12 text-gray-900 dark:text-white" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Enterprise Document Intelligence
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Instantly transform unstructured PDFs, DOCX files, and images into perfectly structured JSON data. Powered by Llama 3 Vision and advanced OCR technology.
+          </p>
+          <div className="pt-8">
+            <button
+              onClick={() => setShowApp(true)}
+              className="px-8 py-4 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-neutral-900 font-semibold rounded-xl shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto"
+            >
+              Try Document Analyzer Now
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gray-50/50 dark:bg-neutral-950 py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
         
         {/* Header - Minimal and professional */}
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            Document Extraction
-          </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            Upload unstructured documents to extract structured insights and entities.
-          </p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              Document Extraction
+            </h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              Upload unstructured documents to extract structured insights and entities.
+            </p>
+          </div>
+          <button 
+            onClick={() => setShowApp(false)}
+            className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            ← Back to Home
+          </button>
         </div>
 
         <div className="grid md:grid-cols-12 gap-6 items-start">
