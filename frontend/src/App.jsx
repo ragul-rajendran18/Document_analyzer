@@ -38,7 +38,7 @@ function App() {
     formData.append('file', file)
 
     try {
-      const response = await axios.post('http://localhost:8000/api/document-analyze', formData, {
+      const response = await axios.post('https://document-analyzer-k4jg.onrender.com/api/document-analyze', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'x-api-key': 'your_secret_api_key_for_clients' 
